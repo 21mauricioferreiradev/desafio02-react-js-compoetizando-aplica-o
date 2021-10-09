@@ -1,4 +1,4 @@
-import { createContext, ReactNode,  useState, useEffect, Children, useContext } from 'react';
+import { createContext, ReactNode,  useState, useEffect, useContext } from 'react';
 import { api } from './services/api';
 
 
@@ -7,9 +7,10 @@ interface GenreResponseProps {
   name: "action" | "comedy" | "documentary" | "drama" | "horror" | "family";
   title: string;
 }
-interface MoviesProviderProps{
+interface MoviesProviderProps {
   children: ReactNode
 }
+
 interface MovieProps {
   imdbID: string;
   Title: string;
@@ -63,7 +64,7 @@ function handleClickButton(id: number) {
 }
   return (
     <MoviesContext.Provider value={{ genres, selectedGenreId, selectedGenre, handleClickButton, movies }}>
-      {Children}
+      {children}
     </MoviesContext.Provider>
   )
 }
